@@ -1,18 +1,23 @@
-'use strict'
+'use strict';
 
 async function getusers() {
-    try {
-        const response = await fetch('https://reqres.in/api/users/1');
+  const options = {
+    method: 'GET',
+    headers: {
+      'x-api-key': '',
+    },
+  };
+  try {
+    const response = await fetch('https://reqres.in/api/users/1', options);
 
-        if (!response.ok) {
-            throw new Error(response.statusText);
-        }
-
+    if (!response.ok) {
+      throw new Error(response.statusText);
+    }
 
     const data = await response.json();
     console.log('dataa', data);
-    }   catch (error) {
-        console.error('Error getting user data', error);
-    }
+  } catch (error) {
+    console.error('Error getting user data', error);
+  }
 }
 getusers();
