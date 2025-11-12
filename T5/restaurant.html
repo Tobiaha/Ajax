@@ -1,16 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Restaurant</title>
-</head>
-<body>
-  <thead>
-    <tbody>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant</title>
+    <script src="restaurant.js" type="module"></script>
+    <link rel="stylesheet" href="restaurant.css" />
+  </head>
+  <body>
+    <div class="container">
+      <main>
+        <h1>Restaurants</h1>
+        <section id="filter-by-company">
+          <button id="reset">Reset</button>
+          <button id="sodexo">Sodexo</button>
+          <button id="compass">Compass</button>
+        </section>
+        <section id="restaurants">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Company</th>
+              </tr>
+            </thead>
 
-    </tbody>
-  </thead>
+            <!-- add restaurantshere -->
+            <tbody id="target"></tbody>
+          </table>
+        </section>
+      </main>
+    </div>
 
-</body>
+    <!-- Modal -->
+    <dialog id="restaurantModal">
+      <header>
+        <button class="close-button">Close</button>
+      </header>
+      <!-- Add restaurant info here when restaurant is clicked -->
+      <article id="modal-content"></article>
+    </dialog>
+    <dialog id="user-modal">
+      <header>
+        <button class="close-button">Close</button>
+      </header>
+      <p>Kirjautuminen/rekisteröityminen</p>
+    </dialog>
+  </body>
 </html>
